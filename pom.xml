@@ -11,10 +11,10 @@
 
 
     <properties>
-        <!--<flink.version>ne-flink-1.10.0-1.1.1-SNAPSHOT</flink.version>-->
         <flink.version>1.10.0</flink.version>
         <fastjson.version>1.2.54</fastjson.version>
         <influxdb.version>1.0.0</influxdb.version>
+        <hadoop.version>3.0.0</hadoop.version>
     </properties>
 
     <dependencies>
@@ -50,11 +50,11 @@
             <version>${fastjson.version}</version>
         </dependency>
 
-        <!--<dependency>
+        <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-connector-kafka_2.11</artifactId>
             <version>${flink.version}</version>
-        </dependency>-->
+        </dependency>
 
         <dependency>
             <groupId>org.scala-lang</groupId>
@@ -65,9 +65,9 @@
 
 
         <dependency>
-            <groupId>com.netease</groupId>
-            <artifactId>ntsdb-java</artifactId>
-            <version>${influxdb.version}</version>
+            <groupId>org.influxdb</groupId>
+            <artifactId>influxdb-java</artifactId>
+            <version>2.15</version>
         </dependency>
 
         <dependency>
@@ -88,6 +88,7 @@
             <version>${flink.version}</version>
         </dependency>
 
+
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-table-api-java-bridge_2.11</artifactId>
@@ -100,6 +101,29 @@
             <version>${flink.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-hadoop-compatibility_2.11</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>${hadoop.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-filesystem_2.11</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-jdbc_2.11</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
 
 
     </dependencies>

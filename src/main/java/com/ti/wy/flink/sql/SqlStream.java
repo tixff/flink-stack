@@ -24,7 +24,7 @@ public class SqlStream {
                 "  'connector.type' = 'kafka',\n" +
                 "  'connector.version' = '0.11',\n" +
                 "  'connector.topic' = 'flink_test',\n" +
-                "  'connector.startup-mode' = 'earliest-offset',\n" +
+                "  'connector.startup-mode' = 'latest-offset',\n" +
                 "  'connector.properties.zookeeper.connect' = '192.168.75.101:2181',\n" +
                 "  'connector.properties.bootstrap.servers' = '192.168.75.101:9092',\n" +
                 "  'update-mode' = 'append',\n" +
