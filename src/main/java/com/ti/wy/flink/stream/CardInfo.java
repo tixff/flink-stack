@@ -12,6 +12,7 @@ import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.CheckpointConfig;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.sink.RichSinkFunction;
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer010;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer09;
 import org.apache.flink.util.Collector;
 import org.influxdb.InfluxDB;
@@ -49,12 +50,12 @@ public class CardInfo {
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.createLocalEnvironmentWithWebUI(configuration);*/
 
         Properties properties = new Properties();
-        properties.setProperty("bootstrap.servers", "192.168.75.101:9092");
+        properties.setProperty("bootstrap.servers", "192.168.137.101:9092");
         properties.setProperty("group.id", "iot_light_group0001");
         properties.setProperty("auto.offset.reset", "earliest");//earliest  latest
 
 
-        FlinkKafkaConsumer09<ArrayList<String>> myConsumer = new FlinkKafkaConsumer09(
+        FlinkKafkaConsumer010<ArrayList<String>> myConsumer = new FlinkKafkaConsumer010<ArrayList<String>>(
                 "iot_test",
                 new DeserializationSchema() {
                     @Override
@@ -135,7 +136,7 @@ public class CardInfo {
             @Override
             public void open(Configuration parameters) throws Exception {
                 try {
-                    influxDB = InfluxDBFactory.connect("http://192.168.75.103:8086", "root", "root");
+                    influxDB = InfluxDBFactory.connect("http://192.168.137.103:8086", "root", "root");
                     influxDB.setDatabase("light_net");
                 } catch (Exception e) {
                     LOG.error("get influxdb connetion error:", e);
