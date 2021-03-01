@@ -1,6 +1,6 @@
 package com.ti.wy.kafka;
 
-import com.ti.wy.warn.YarnJobMonitor;
+
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 
